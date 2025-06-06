@@ -12,11 +12,19 @@ export default defineConfig({
     tailwindcss(),
     
   ],
+   build: {
+    rollupOptions: {
+      external: ['@kinde-oss/kinde-typescript-sdk'] // Exclude from frontend bundle
+    }
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // define: {
+  //   'process.env': process.env
+  // },
   server: {
     proxy: {
       "/api": {
