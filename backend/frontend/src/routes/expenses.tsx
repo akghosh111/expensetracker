@@ -18,7 +18,7 @@ export const Route = createFileRoute('/expenses')({
 })
 
 async function getAllExpenses() {
-  await new Promise((r) => setTimeout(r, 2000))
+//   await new Promise((r) => setTimeout(r, 2000))
   const res = await api.expenses.$get()
   if(!res.ok) {
     throw new Error("server error")
